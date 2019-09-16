@@ -41,63 +41,50 @@
 //         })
 //     });
 
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
-    .then((results) => {
-        bootstrapArticles = results.data.articles.bootstrap;
-        javascriptArticles = results.data.articles.javascript;
-        nodeArticles = results.data.articles.node;
-        technologyArticles = results.data.articles.technology;
-        jqueryArticles = results.data.articles.jquery;
-
-        overallArticles = results.data.articles;
-        console.log(overallArticles);
-        bootstrapArticles.forEach((element) => {
-            const articles = document.querySelector('.cards-container');
-            articles.appendChild(articleCreator(element));
-        });
-        javascriptArticles.forEach((element) => {
-            const articles = document.querySelector('.cards-container');
-            articles.appendChild(articleCreator(element));
-        });
-        nodeArticles.forEach((element) => {
-            const articles = document.querySelector('.cards-container');
-            articles.appendChild(articleCreator(element));
-        });
-        technologyArticles.forEach((element) => {
-            const articles = document.querySelector('.cards-container');
-            articles.appendChild(articleCreator(element));
-        });
-        jqueryArticles.forEach((element) => {
-            const articles = document.querySelector('.cards-container');
-            articles.appendChild(articleCreator(element));
-        });
-    });
-
 // axios.get('https://lambda-times-backend.herokuapp.com/articles')
 //     .then((results) => {
-//         overallArticles = results.data.articles;
-//         // for (i = 0; i < Object.keys(overallArticles).length; i++) {
-//         //     overallArticles.children.forEach((element) => {
-//         //         console.log(element);
-//         //     });
-//         // }
-//         // for (var key in overallArticles) {
+//         bootstrapArticles = results.data.articles.bootstrap;
+//         javascriptArticles = results.data.articles.javascript;
+//         nodeArticles = results.data.articles.node;
+//         technologyArticles = results.data.articles.technology;
+//         jqueryArticles = results.data.articles.jquery;
 
-//         // }
-//         // Object.keys(overallArticles.children).forEach((element) => {
-//         //         console.log(element);
-//         // });
-//         // console.log(overallArticles.bootstrap);
-//         // for (article in overallArticles) {
-//         //     console.log(`${overallArticles}.${article}`);
-//         // }
-//         // overallArticles.forEach((element) => {
-//         //     this.forEach((element) => {
-//         //         const articles = document.querySelector('.cards-container');
-//         //         articles.appendChild(articleCreator(element));
-//         //     });
-//         // });
+//         bootstrapArticles.forEach((element) => {
+//             const articles = document.querySelector('.cards-container');
+//             articles.appendChild(articleCreator(element));
+//         });
+//         javascriptArticles.forEach((element) => {
+//             const articles = document.querySelector('.cards-container');
+//             articles.appendChild(articleCreator(element));
+//         });
+//         nodeArticles.forEach((element) => {
+//             const articles = document.querySelector('.cards-container');
+//             articles.appendChild(articleCreator(element));
+//         });
+//         technologyArticles.forEach((element) => {
+//             const articles = document.querySelector('.cards-container');
+//             articles.appendChild(articleCreator(element));
+//         });
+//         jqueryArticles.forEach((element) => {
+//             const articles = document.querySelector('.cards-container');
+//             articles.appendChild(articleCreator(element));
+//         });
+
+        
 //     });
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    .then((results) => {
+        overallArticles = results.data.articles;
+        const articles = document.querySelector('.cards-container');
+        Object.keys(overallArticles).forEach((element) => {
+            overallArticles[element].forEach((element) => {
+                console.log(element);
+                
+                articles.appendChild(articleCreator(element));
+            });
+        });
+    });
 
 const articleCreator = (articleData) => {
     const card = document.createElement('div');
