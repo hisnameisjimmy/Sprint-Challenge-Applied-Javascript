@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The DOM is the document object model, which represents the data heirarchy in a web page.
+
 2. What is an event?
+
+An event is any number of actions taken on the user part, like mouse move, hover, click, scroll, etc, that a program can take action on.
 
 3. What is an event listener?
 
+An event listener is a function that listens for events that occur on a web page like click, hover, etc. 
+
 4. Why would we convert a NodeList into an Array?
 
+Likely so you can use array methods on it. NodeLists don't have the same methods like map/reduce available to them, although they do have forEach().
+
 5. What is a component?
+
+A component is a function that takes in data and builds out dynamic, re-usable elements that can be used to build out functionality on a website/app.
 
 ### Git Set up
 
